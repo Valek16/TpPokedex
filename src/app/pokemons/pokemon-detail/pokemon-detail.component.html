@@ -1,0 +1,54 @@
+<div class="ScrollContainer">
+  <div class="detail">
+    <audio src="/assets/audio/{{pokemon?.id}}.mp3" preload="auto" autoplay="autoplay"></audio>
+    <mat-card class="contenu-detail">
+      <p>Détails</p>
+      <mat-grid-list cols="2" >
+        <mat-grid-tile>
+          <mat-list class="img-No">
+            <mat-card-content><img mat-card-lg-image src="/assets/img/official-artwork/{{pokemon?.id}}.png"></mat-card-content>
+            <mat-card-content id="No">No. {{pokemon?.id|number:"3.0-0"}}</mat-card-content>
+          </mat-list>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-list>
+            <mat-list-item>
+              <mat-card-title>{{pokemon?.name}}
+                <button id="play" mat-icon-button color="accent" (click)="playPokemonSound(pokemon?.id)">
+                  <mat-icon>play_circle_outline</mat-icon>
+                </button>
+              </mat-card-title>
+            </mat-list-item>
+
+            <mat-list-item>
+              <mat-chip-list>
+                <mat-chip *ngFor="let type of pokemon?.types"> {{type}} </mat-chip>
+              </mat-chip-list>
+            </mat-list-item>
+
+            <mat-list-item>Poids : {{pokemon?.weight|number:"0.1-1"}} Kg</mat-list-item>
+
+            <mat-list-item>Taille : {{pokemon?.height|number:"0.1-1"}} m</mat-list-item>
+
+            <mat-list-item>
+              <button mat-stroked-button (click)="addPokemonToTeam(pokemon!.id)">Add {{pokemon?.name}} to team</button>
+            </mat-list-item>
+
+          </mat-list>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="2" >
+          <mat-card-content>Description : {{pokemon?.description}}</mat-card-content>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+      <button mat-icon-button color="accent" class="button" matLine routerLink="">
+        <mat-icon>keyboard_backspace</mat-icon>
+      </button>
+    </mat-card>
+  </div>
+  <app-team></app-team>
+</div>
+
+
+
