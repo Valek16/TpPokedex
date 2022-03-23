@@ -8,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class PokedexComponent implements OnInit {
 
   idPokemon = 1;
-  nomPokemon = "";
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  /***
+   * Récupère l'id depuis l'enfant
+   * @param id
+   */
   getIdPokemon(id: number) {
     console.log("parent " + id)
     this.idPokemon = id

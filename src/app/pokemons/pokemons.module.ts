@@ -18,6 +18,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import { TeamComponent } from './team/team.component';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { TeamComponent } from './team/team.component';
     MatToolbarModule,
     MatInputModule,
     FormsModule,
+    MatSnackBarModule,
   ]
 })
 export class PokemonsModule { }

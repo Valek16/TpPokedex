@@ -1,9 +1,12 @@
-<mat-sidenav-container class="test" autosize="true">
-  <mat-sidenav class="list" mode="side" opened >
-    <app-pokemon-list (idPokemonEvent)="getIdPokemon($event)" ></app-pokemon-list>
-  </mat-sidenav>
-  <mat-sidenav-content><app-pokemon-detail [idPokemon]="this.idPokemon"></app-pokemon-detail></mat-sidenav-content>
-</mat-sidenav-container>
+<div>
+  <mat-sidenav-container class="test" autosize="true">
+    <mat-sidenav class="list" mode="side" opened >
+      <app-pokemon-list (idPokemonEvent)="getIdPokemon($event)" ></app-pokemon-list>
+    </mat-sidenav>
+    <mat-sidenav-content><app-pokemon-detail [idPokemon]="this.idPokemon"></app-pokemon-detail></mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
 
 
 

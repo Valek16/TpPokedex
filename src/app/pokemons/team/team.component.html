@@ -1,5 +1,8 @@
-<button id="btnTeam" mat-stroked-button (click)="getTeamFromService()">My Team</button>
-<h1 id="titre">My Team</h1>
+
+<button id="btnTeam" mat-raised-button color="primary" (click)="getTeamFromService()">Mon équipe de Pokemons</button>
+
+<h1 id="titre">Mon équipe de Pokémons</h1>
+
 <div id="divTeam" fxLayout="row wrap" fxLayoutGap="16px grid">
   <div fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%" *ngFor="let pokemon of pokemonTeam">
     <mat-card>
@@ -7,25 +10,29 @@
         <img mat-card-lg-image src="/assets/img/official-artwork/{{pokemon.id}}.png" >
         <mat-card-title>{{ pokemon.name }}</mat-card-title>
         <mat-card-subtitle>No. {{ pokemon.id | number:"3.0-0"}}</mat-card-subtitle>
+
         <mat-list>
           <mat-list-item>
             <mat-chip-list>
               <mat-chip *ngFor="let type of pokemon?.types">{{type}}</mat-chip>
             </mat-chip-list>
           </mat-list-item>
+
           <div class="Taille_Poids">
-          <mat-list-item>Taille: {{pokemon?.height | number:"1.1-1" }}m</mat-list-item>
-          <mat-list-item>Poids: {{pokemon?.weight | number:"1.1-1"}}kg</mat-list-item>
+          <mat-list-item>Taille: {{pokemon?.height | number:"0.1-1" }} m</mat-list-item>
+          <mat-list-item>Poids: {{pokemon?.weight | number:"0.1-1"}} kg</mat-list-item>
           </div>
         </mat-list>
+
       </mat-card-title-group>
 
       <mat-card-content>
         {{ pokemon.description }}
       </mat-card-content>
+
       <mat-card-actions>
-        <button mat-icon-button class="delete" color="accent" (click)="deletePokemonById(pokemon.id)" >
-          <mat-icon>delete</mat-icon>
+        <button mat-icon-button class="btnSuppr" color="accent" (click)="deletePokemonById(pokemon.id)" >
+          <mat-icon>close icon</mat-icon>
         </button>
       </mat-card-actions>
     </mat-card>

@@ -14,7 +14,7 @@
           <mat-list>
             <mat-list-item>
               <mat-card-title>{{pokemon?.name}}
-                <button id="play" mat-icon-button color="accent" (click)="playPokemonSound(pokemon?.id)">
+                <button id="playBtn" mat-icon-button color="accent" (click)="playPokemonSound(pokemon?.id)">
                   <mat-icon>play_circle_outline</mat-icon>
                 </button>
               </mat-card-title>
@@ -26,13 +26,9 @@
               </mat-chip-list>
             </mat-list-item>
 
-            <mat-list-item>Poids : {{pokemon?.weight|number:"0.1-1"}} Kg</mat-list-item>
-
             <mat-list-item>Taille : {{pokemon?.height|number:"0.1-1"}} m</mat-list-item>
 
-            <mat-list-item>
-              <button mat-stroked-button (click)="addPokemonToTeam(pokemon!.id)">Add {{pokemon?.name}} to team</button>
-            </mat-list-item>
+            <mat-list-item>Poids : {{pokemon?.weight|number:"0.1-1"}} Kg</mat-list-item>
 
           </mat-list>
         </mat-grid-tile>
@@ -42,9 +38,10 @@
         </mat-grid-tile>
 
       </mat-grid-list>
-      <button mat-icon-button color="accent" class="button" matLine routerLink="">
+      <!--<button mat-icon-button color="accent" class="button" matLine routerLink="">
         <mat-icon>keyboard_backspace</mat-icon>
-      </button>
+      </button>-->
+      <button mat-raised-button color="primary" id="btnAddPokemon" (click)="addPokemonToTeam(pokemon!.id)">Ajouter {{pokemon?.name}} à mon équipe</button>
     </mat-card>
   </div>
   <app-team></app-team>

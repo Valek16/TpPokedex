@@ -2,3 +2,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.addSnackBar{
+  background: lightgreen;
+  text-align: center !important;
+}
+
+.deleteSnackBar{
+  background: red;
+  text-align: center !important;
+}
+
